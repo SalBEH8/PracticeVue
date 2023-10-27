@@ -1,3 +1,9 @@
+# PracticeVue
+Cours et pratique Vue3
+- Mise en place des Packages
+- Intérêt au tour des possibilités ...
+
+
 # cours-demo
 
 This template should help get you started developing with Vue 3 in Vite.
