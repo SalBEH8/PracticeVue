@@ -1,0 +1,36 @@
+/* train */
+#alerts {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.alert {
+    padding: .75rem 1.5rem;
+    border-radius: .5rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.alert i:hover {
+    cursor: pointer;
+}
+.alert-danger {
+    background-color: red;
+}
+
+.alert-warning {
+    background-color: orange;
+}
+
+.alert-success {
+    background-color: green;
+}
+
+.super-alert {
+    padding: .75rem 1rem;
+    background-color: red;
+    border-radius: 5px;
+}

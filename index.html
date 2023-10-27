@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Démo Vue.js</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    
+
+</head>
+<body>
+    <div id="app">
+       <p>{{ hello() }} {{ firstname }} {{ learningStatus }}</p>
+       <p>{{ learningStatus() }}</p>
+       <p>{{ count }}</p>
+       <buton @click="count++">+1</buton>
+    </div>
+    <script>
+        const vm = Vue.createApp({
+            data() {
+                return {
+                    firstname: 'John',
+                    premium: false,
+                    age: 36,
+                    languages: ['HTML', 'JavaScript', '.Net'],
+                    count: 0
+                }
+            },
+            methods: {
+                hello() {
+                    return "Hello world " + this.firstname;
+                },
+                learningStatus() {
+                    return this.languages.length >= 5 ? "Languages acquired" : "Languages not available";
+                }
+            },
+            watch: {
+                count(newValue, oldValue) {
+                    console.log(`From ${oldValue} to ${newValue}`);
+                }
+            }
+        }).mount("#app")
+    </script>
+
+    <script>
+      
+    </script>
+
+    <script>
+
+    </script>
+</body>
+</html>

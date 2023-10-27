@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Démo Vue.js</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <div id="app">
+        <div id="alerts">
+            <!-- <div class="alert" v-for="alert in alerts" :key="alert.id" :alert="alert" @remove="removeAlert(alert.id)" /> -->
+            <div class="alert" :class="`alert-${alert.type}`" v-for="alert in alerts" :key="alert.id"v-show="alert.visible">
+            <!-- :class="[alert.type]" -->
+                <p>{{ alert.content }}</p>
+                <!-- <i @click="removeAlert(alert.id)">X</i> -->
+                <i class="fa-solid fa-xmark" @click="removeAlert(alert.id)"></i>
+            </div>
+        </div>
+        <script>
+            const vm = Vue.createApp({
+                data() {
+                    return {
+                        alerts: [
+                            {
+                                id: 1,
+                                type: 'danger',
+                                content: 'Mauvais mot de passe.',
+                                visible: true
+                            },
+                            {
+                                id: 2,
+                                type: 'success',
+                                content: 'Inscription avec succès.',
+                                visible: true
+                            },
+                            {
+                                id: 3,
+                                type: 'warning',
+                                content: 'Attention, votre mot de passe est peu sécurisé.',
+                                visible: true
+                            }
+                        ]
+                    }
+                },
+
+                methods: {
+                    removeAlert(id) {
+                        this.alerts = this.alerts.filter(alert => alert.id !== id);
+                }
+                /*showAlert(message) {
+                    window.alert(message);
+                }*/
+                }
+                /*
+                methods: {
+                    removeAlert(id) {
+                        this.alerts = this.alerts.filter(alert => alert.id !== id);
+                    }
+                } */
+                
+            }).mount("#app");
+        </script>
+        <script>
+
+        </script>
+
+        <script>
+
+        </script>
+</body>
+
+</html>
